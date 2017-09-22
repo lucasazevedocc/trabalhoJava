@@ -14,7 +14,7 @@ import java.util.HashMap;
 public class Curso {
     private String codCurso;
     private String nomeDoCurso;
-    private HashMap<String,Disciplina> disciplinas;
+    private HashMap<String,Materia> materias;
     
     public Curso(){
         
@@ -35,10 +35,10 @@ public class Curso {
         this.nomeDoCurso = nomeDoCurso;
     }
     
-    private HashMap<String,Disciplina> getFormacao(){
-        return this.disciplinas;
+    private HashMap<String,Materia> getMaterias(){
+        return this.materias;
     } 
-    private void setDisciplinas(HashMap<String,Disciplina> disciplinas){
-        this.disciplinas = disciplinas;
+    private void setMaterias(HashMap<String,Materia> materias){
+        this.materias = materias;
     }
 }
