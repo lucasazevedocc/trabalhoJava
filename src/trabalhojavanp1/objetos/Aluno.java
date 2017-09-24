@@ -5,13 +5,17 @@
  */
 package trabalhojavanp1.objetos;
 
+import interfaces.PadraoDAO;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Objects;
 
 /**
  *
  * @author Alessandra
  */
-public class Aluno {
+public class Aluno implements PadraoDAO{
     private String matricula;
     private String nome;
     private String endereco;
@@ -19,6 +23,41 @@ public class Aluno {
     
     public Aluno(){
         
+    }
+    
+    public Aluno(String matricula, String nome, String endereco, HashMap<String,Curso> cursando){
+        this.matricula = matricula; 
+        this.nome = nome; 
+        this.endereco = endereco; 
+        this.cursando = cursando; 
+    }
+    
+    @Override
+    public void salvarAtual() {
+    }
+
+    @Override
+    public void atualizarAtual() {
+    }
+
+    @Override
+    public void deletarAtual() {
+    }
+
+    @Override
+    public void deletarByKey(String key) {
+    }
+
+    @Override
+    public Object buscarByKey(String key) {
+        Aluno aluno = new Aluno();
+        return aluno;
+    }
+
+    @Override
+    public List<Object> buscarTodos() {
+        List<Object> list = new ArrayList<Object>();
+        return list;
     }
     
     //GETTERS SETTERS

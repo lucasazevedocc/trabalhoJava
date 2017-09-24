@@ -5,20 +5,62 @@
  */
 package trabalhojavanp1.objetos;
 
+import interfaces.PadraoDAO;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Objects;
 
 /**
  *
  * @author Alessandra
  */
-public class Curso {
+public class Curso implements PadraoDAO{
     private String codCurso;
     private String nomeDoCurso;
     private HashMap<String,Materia> materias;
     
+    
     public Curso(){
         
     }
+    
+    public Curso(String codCurso, String nomeDoCurso, HashMap<String,Materia> materias){
+        this.codCurso = codCurso;
+        this.nomeDoCurso = nomeDoCurso;
+        this.materias = materias;
+    }
+    
+    
+    
+    @Override
+    public void salvarAtual() {
+    }
+
+    @Override
+    public void atualizarAtual() {
+    }
+
+    @Override
+    public void deletarAtual() {
+    }
+
+    @Override
+    public void deletarByKey(String key) {
+    }
+
+    @Override
+    public Object buscarByKey(String key) {
+        Curso curso = new Curso();
+        return curso;
+    }
+
+    @Override
+    public List<Object> buscarTodos() {
+        List<Object> list = new ArrayList<Object>();
+        return list;    
+    }
+    
     
     //GETTERS SETTERS
     private String getCodCurso(){
@@ -41,4 +83,5 @@ public class Curso {
     private void setMaterias(HashMap<String,Materia> materias){
         this.materias = materias;
     }
+
 }
