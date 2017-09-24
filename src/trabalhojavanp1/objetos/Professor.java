@@ -67,38 +67,38 @@ public class Professor implements PadraoDAO{
     
     
     //GETTERS SETTERS
-    private String getRegistro(){
+    public String getRegistro(){
         return this.registro;
     } 
-    private void setRegistro(String registro){
+    public void setRegistro(String registro){
         this.registro = registro;
     }
     
-    private String getNome(){
+    public String getNome(){
         return this.nome;
     } 
-    private void setNome(String nome){
+    public void setNome(String nome){
         this.nome = nome;
     }
     
-    private String getFormacao(){
+    public String getFormacao(){
         return this.formacao;
     } 
-    private void setFormacao(String formacao){
+    public void setFormacao(String formacao){
         this.formacao = formacao;
     }
     
-    private HashMap<String,Materia> getLecionando(){
+    public HashMap<String,Materia> getLecionando(){
         return this.lecionando;
     } 
-    private void setLecionando(HashMap<String,Materia> lecionando){
+    public void setLecionando(HashMap<String,Materia> lecionando){
         this.lecionando = lecionando;
     }
 
-    private HashMap<String,Disciplina> getDisciplinas(){
+    public HashMap<String,Disciplina> getDisciplinas(){
         return this.disciplinas;
     } 
-    private void setDisciplinas(HashMap<String,Disciplina> disciplinas){
+    public void setDisciplinas(HashMap<String,Disciplina> disciplinas){
         this.disciplinas = disciplinas;
     }
 }

@@ -59,17 +59,17 @@ public class Disciplina implements PadraoDAO{
     }
     
     //GETTERS SETTERS
-    private String getCodDisciplina(){
+    public String getCodDisciplina(){
         return this.codDisciplina;
     } 
-    private void setCodDisciplina(String codDisciplina){
+    public void setCodDisciplina(String codDisciplina){
         this.codDisciplina = codDisciplina;
     }
     
-    private String getNomeDisciplina(){
+    public String getNomeDisciplina(){
         return this.nomeDisciplina;
     } 
-    private void setNome(String nomeDisciplina){
+    public void setNome(String nomeDisciplina){
         this.nomeDisciplina = nomeDisciplina;
     }
 }

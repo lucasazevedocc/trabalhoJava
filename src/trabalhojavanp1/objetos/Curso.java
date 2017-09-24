@@ -63,24 +63,24 @@ public class Curso implements PadraoDAO{
     
     
     //GETTERS SETTERS
-    private String getCodCurso(){
+    public String getCodCurso(){
         return this.codCurso;
     } 
-    private void setCodCurso(String codCurso){
+    public void setCodCurso(String codCurso){
         this.codCurso = codCurso;
     }
     
-    private String getNomeDoCurso(){
+    public String getNomeDoCurso(){
         return this.nomeDoCurso;
     } 
-    private void setNomeDoCurso(String nomeDoCurso){
+    public void setNomeDoCurso(String nomeDoCurso){
         this.nomeDoCurso = nomeDoCurso;
     }
     
-    private HashMap<String,Materia> getMaterias(){
+    public HashMap<String,Materia> getMaterias(){
         return this.materias;
     } 
-    private void setMaterias(HashMap<String,Materia> materias){
+    public void setMaterias(HashMap<String,Materia> materias){
         this.materias = materias;
     }
 

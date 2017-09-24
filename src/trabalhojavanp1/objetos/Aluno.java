@@ -61,31 +61,31 @@ public class Aluno implements PadraoDAO{
     }
     
     //GETTERS SETTERS
-    private String getMatricula(){
+    public String getMatricula(){
         return this.matricula;
     } 
-    private void setMatricula(String matricula){
+    public void setMatricula(String matricula){
         this.matricula = matricula;
     }
     
-    private String getNome(){
+    public String getNome(){
         return this.nome;
     } 
-    private void setNome(String nome){
+    public void setNome(String nome){
         this.nome = nome;
     }
     
-    private String getEndereco(){
+    public String getEndereco(){
         return this.endereco;
     } 
-    private void setEndereco(String endereco){
+    public void setEndereco(String endereco){
         this.endereco = endereco;
     }
     
-    private HashMap<String,Curso> getCursando(){
+    public HashMap<String,Curso> getCursando(){
         return this.cursando;
     } 
-    private void setMatricula(HashMap<String,Curso> cursando){
+    public void setMatricula(HashMap<String,Curso> cursando){
         this.cursando = cursando;
     }
 }
