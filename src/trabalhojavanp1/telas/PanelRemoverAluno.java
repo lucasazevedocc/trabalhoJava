@@ -12,8 +12,8 @@ import javax.swing.JFrame;
  *
  * @author Alessandra
  */
-public class FrameMostrarCursos extends JFrame implements PadraoFrame{
-    public FrameMostrarCursos(){
+public class PanelRemoverAluno extends JFrame implements PadraoFrame{
+    public PanelRemoverAluno(){
         initViews();
         initObjects();
     }

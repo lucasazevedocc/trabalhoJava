@@ -1,14 +1,19 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package trabalhojavanp1.telas;
 
-import interfaces.PadraoFrame;
-import javax.swing.JFrame;
+import interfaces.PadraoPanel;
+import javax.swing.JPanel;
 import trabalhojavanp1.objetos.Professor;
 
-//TODO verificar se ja existe disciplinas adicionados antes de liberar a adicao dos professores
-public class FrameAdicionarProfessor extends JFrame implements PadraoFrame{
+
+public class PanelModifcarProfessor extends JPanel implements PadraoPanel{
     private Professor professor;
     
-    public FrameAdicionarProfessor(){
+    public PanelModifcarProfessor(){
         initViews();
         initObjects();
     }
@@ -21,7 +26,8 @@ public class FrameAdicionarProfessor extends JFrame implements PadraoFrame{
     public void initObjects() {
         this.professor = new Professor();
     }
-    
+
+   
     private boolean professorIsValid(){
         if(false){
             return false;
@@ -31,7 +37,7 @@ public class FrameAdicionarProfessor extends JFrame implements PadraoFrame{
             return true;
         }
     }
-
+    
     
     //GETTERS SETTERS
     public Professor getProfessor() {
@@ -40,4 +46,5 @@ public class FrameAdicionarProfessor extends JFrame implements PadraoFrame{
     public void setProfessor(Professor professor) {
         this.professor = professor;
     }
+    
 }

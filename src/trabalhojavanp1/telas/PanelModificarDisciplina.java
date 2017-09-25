@@ -13,10 +13,10 @@ import trabalhojavanp1.objetos.Disciplina;
  *
  * @author Alessandra
  */
-public class FrameModificarDisciplina extends JFrame implements PadraoFrame{
+public class PanelModificarDisciplina extends JFrame implements PadraoFrame{
     private Disciplina disciplina;
     
-    public FrameModificarDisciplina(){
+    public PanelModificarDisciplina(){
         initViews();
         initObjects();
     }
