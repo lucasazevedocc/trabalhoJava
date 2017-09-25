@@ -10,10 +10,10 @@ import javax.swing.JPanel;
 import trabalhojavanp1.objetos.Professor;
 
 
-public class PanelModifcarProfessor extends JPanel implements PadraoPanel{
+public class PanelModificarProfessor extends JPanel implements PadraoPanel{
     private Professor professor;
     
-    public PanelModifcarProfessor(){
+    public PanelModificarProfessor(){
         initViews();
         initObjects();
     }

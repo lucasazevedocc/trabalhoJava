@@ -12,9 +12,9 @@ import javax.swing.JFrame;
  *
  * @author Alessandra
  */
-public class PanelMostrarrDisciplinas extends JFrame implements PadraoFrame{
+public class PanelMostrarDisciplinas extends JFrame implements PadraoFrame{
     
-    public PanelMostrarrDisciplinas(){
+    public PanelMostrarDisciplinas(){
         initViews();
         initObjects();
     }
