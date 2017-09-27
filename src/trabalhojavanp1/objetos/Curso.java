@@ -16,16 +16,16 @@ import java.util.Objects;
  * @author Alessandra
  */
 public class Curso implements PadraoDAO{
-    private String codCurso;
+    private int codCurso;
     private String nomeDoCurso;
-    private HashMap<String,Materia> materias;
+    private HashMap<Integer,Materia> materias;
     
     
     public Curso(){
         
     }
     
-    public Curso(String codCurso, String nomeDoCurso, HashMap<String,Materia> materias){
+    public Curso(int codCurso, String nomeDoCurso, HashMap<Integer,Materia> materias){
         this.codCurso = codCurso;
         this.nomeDoCurso = nomeDoCurso;
         this.materias = materias;
@@ -46,11 +46,11 @@ public class Curso implements PadraoDAO{
     }
 
     @Override
-    public void deletarByKey(String key) {
+    public void deletarByKey(int key) {
     }
 
     @Override
-    public Object buscarByKey(String key) {
+    public Object buscarByKey(int key) {
         Curso curso = new Curso();
         return curso;
     }
@@ -63,10 +63,10 @@ public class Curso implements PadraoDAO{
     
     
     //GETTERS SETTERS
-    public String getCodCurso(){
+    public int getCodCurso(){
         return this.codCurso;
     } 
-    public void setCodCurso(String codCurso){
+    public void setCodCurso(int codCurso){
         this.codCurso = codCurso;
     }
     
@@ -77,10 +77,10 @@ public class Curso implements PadraoDAO{
         this.nomeDoCurso = nomeDoCurso;
     }
     
-    public HashMap<String,Materia> getMaterias(){
+    public HashMap<Integer,Materia> getMaterias(){
         return this.materias;
     } 
-    public void setMaterias(HashMap<String,Materia> materias){
+    public void setMaterias(HashMap<Integer,Materia> materias){
         this.materias = materias;
     }
 

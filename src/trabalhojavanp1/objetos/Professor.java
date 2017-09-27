@@ -16,18 +16,18 @@ import java.util.List;
  * @author Alessandra
  */
 public class Professor implements PadraoDAO{
-    private String registro;
+    private int registro;
     private String nome;
     private String formacao;
-    private HashMap<String,Materia> lecionando;
-    private HashMap<String,Disciplina> disciplinas;
+    private HashMap<Integer,Materia> lecionando;
+    private HashMap<Integer,Disciplina> disciplinas;
 
 
     public Professor(){
         
     }
     
-    public Professor(String registro, String nome, String formacao, HashMap<String,Materia> lecionando, HashMap<String,Disciplina> disciplinas){
+    public Professor(int registro, String nome, String formacao, HashMap<Integer,Materia> lecionando, HashMap<Integer,Disciplina> disciplinas){
         this.registro = registro;
         this.nome = nome;
         this.formacao = formacao;
@@ -49,11 +49,11 @@ public class Professor implements PadraoDAO{
     }
 
     @Override
-    public void deletarByKey(String key) {
+    public void deletarByKey(int key) {
     }
 
     @Override
-    public Object buscarByKey(String key) {
+    public Object buscarByKey(int key) {
         Professor professor = new Professor();
         return professor;  
     }
@@ -67,10 +67,10 @@ public class Professor implements PadraoDAO{
     
     
     //GETTERS SETTERS
-    public String getRegistro(){
+    public int getRegistro(){
         return this.registro;
     } 
-    public void setRegistro(String registro){
+    public void setRegistro(int registro){
         this.registro = registro;
     }
     
@@ -88,17 +88,17 @@ public class Professor implements PadraoDAO{
         this.formacao = formacao;
     }
     
-    public HashMap<String,Materia> getLecionando(){
+    public HashMap<Integer,Materia> getLecionando(){
         return this.lecionando;
     } 
-    public void setLecionando(HashMap<String,Materia> lecionando){
+    public void setLecionando(HashMap<Integer,Materia> lecionando){
         this.lecionando = lecionando;
     }
 
-    public HashMap<String,Disciplina> getDisciplinas(){
+    public HashMap<Integer,Disciplina> getDisciplinas(){
         return this.disciplinas;
     } 
-    public void setDisciplinas(HashMap<String,Disciplina> disciplinas){
+    public void setDisciplinas(HashMap<Integer,Disciplina> disciplinas){
         this.disciplinas = disciplinas;
     }
 }

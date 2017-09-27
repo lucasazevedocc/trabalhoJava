@@ -16,16 +16,16 @@ import java.util.Objects;
  * @author Alessandra
  */
 public class Aluno implements PadraoDAO{
-    private String matricula;
+    private int matricula;
     private String nome;
     private String endereco;
-    private HashMap<String,Curso> cursando;
+    private HashMap<Integer,Curso> cursando;
     
     public Aluno(){
         
     }
     
-    public Aluno(String matricula, String nome, String endereco, HashMap<String,Curso> cursando){
+    public Aluno(int matricula, String nome, String endereco, HashMap<Integer,Curso> cursando){
         this.matricula = matricula; 
         this.nome = nome; 
         this.endereco = endereco; 
@@ -45,11 +45,11 @@ public class Aluno implements PadraoDAO{
     }
 
     @Override
-    public void deletarByKey(String key) {
+    public void deletarByKey(int key) {
     }
 
     @Override
-    public Object buscarByKey(String key) {
+    public Object buscarByKey(int key) {
         Aluno aluno = new Aluno();
         return aluno;
     }
@@ -61,10 +61,10 @@ public class Aluno implements PadraoDAO{
     }
     
     //GETTERS SETTERS
-    public String getMatricula(){
+    public int getMatricula(){
         return this.matricula;
     } 
-    public void setMatricula(String matricula){
+    public void setMatricula(int matricula){
         this.matricula = matricula;
     }
     
@@ -82,10 +82,10 @@ public class Aluno implements PadraoDAO{
         this.endereco = endereco;
     }
     
-    public HashMap<String,Curso> getCursando(){
+    public HashMap<Integer,Curso> getCursando(){
         return this.cursando;
     } 
-    public void setMatricula(HashMap<String,Curso> cursando){
+    public void setMatricula(HashMap<Integer,Curso> cursando){
         this.cursando = cursando;
     }
 }

@@ -16,7 +16,7 @@ import java.util.Objects;
  * @author Alessandra
  */
 public class Materia implements PadraoDAO{
-    private String codMateria;
+    private int codMateria;
     private Disciplina disciplina;
     private Professor professor;
     private Curso curso;
@@ -25,7 +25,7 @@ public class Materia implements PadraoDAO{
         
     }
     
-    public Materia(String codMateria, Disciplina disciplina, Professor professor, Curso curso){
+    public Materia(int codMateria, Disciplina disciplina, Professor professor, Curso curso){
         this.codMateria = codMateria;
         this.curso = curso;
         this.disciplina = disciplina;
@@ -47,11 +47,11 @@ public class Materia implements PadraoDAO{
     }
 
     @Override
-    public void deletarByKey(String key) {
+    public void deletarByKey(int key) {
     }
 
     @Override
-    public Object buscarByKey(String key) {
+    public Object buscarByKey(int key) {
         Materia materia = new Materia();
         return materia;
     }
@@ -85,10 +85,10 @@ public class Materia implements PadraoDAO{
         this.curso = curso;
     }
     
-    public void setCodMateria(String codMateria) {
+    public void setCodMateria(int codMateria) {
         this.codMateria = codMateria;
     }
-    public String getCodMateria() {
+    public int getCodMateria() {
         return codMateria;
     }     
 

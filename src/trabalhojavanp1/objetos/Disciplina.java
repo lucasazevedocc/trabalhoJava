@@ -16,7 +16,7 @@ import java.util.Objects;
  * @author Alessandra
  */
 public class Disciplina implements PadraoDAO{
-    private String codDisciplina;
+    private int codDisciplina;
     private String nomeDisciplina;
     
     
@@ -24,7 +24,7 @@ public class Disciplina implements PadraoDAO{
         
     }
     
-    public Disciplina(String codDisciplina, String nomeDisciplina){
+    public Disciplina(int codDisciplina, String nomeDisciplina){
         this.codDisciplina = codDisciplina;
         this.nomeDisciplina = nomeDisciplina;
     }
@@ -43,11 +43,11 @@ public class Disciplina implements PadraoDAO{
     }
 
     @Override
-    public void deletarByKey(String key) {
+    public void deletarByKey(int key) {
     }
 
     @Override
-    public Object buscarByKey(String key) {
+    public Object buscarByKey(int key) {
         Disciplina disciplina = new Disciplina();
         return disciplina;
     }
@@ -59,10 +59,10 @@ public class Disciplina implements PadraoDAO{
     }
     
     //GETTERS SETTERS
-    public String getCodDisciplina(){
+    public int getCodDisciplina(){
         return this.codDisciplina;
     } 
-    public void setCodDisciplina(String codDisciplina){
+    public void setCodDisciplina(int codDisciplina){
         this.codDisciplina = codDisciplina;
     }
     

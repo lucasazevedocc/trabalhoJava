@@ -16,7 +16,7 @@ public interface PadraoDAO {
     public void salvarAtual();
     public void atualizarAtual();
     public void deletarAtual();
-    public void deletarByKey(String key);
-    public Object buscarByKey(String key);
+    public void deletarByKey(int key);
+    public Object buscarByKey(int key);
     public List<Object> buscarTodos();
 }
