@@ -1,26 +1,33 @@
 package dao;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import trabalhojavanp1.objetos.Curso;
+import com.mysql.jdbc.Statement;
+
 import trabalhojavanp1.objetos.Disciplina;
-import trabalhojavanp1.objetos.Professor;
 
 public class DisciplinaDao {
 	
 	public void inserirDisciplina(Disciplina disc) throws SQLException {
 
 		PreparedStatement query = new ConnectionFactory().getConnection()
-				.prepareStatement("INSERT INTO disciplinas(id, nome) VALUES(?, ?)");
+				.prepareStatement("INSERT INTO disciplinas(id, nome) VALUES(?, ?)", Statement.RETURN_GENERATED_KEYS);
 
 		query.setInt(1, disc.getCodDisciplina());
 		query.setString(2, disc.getNomeDisciplina());
 
-		query.execute();
+		query.executeUpdate();
+		ResultSet id = query.getGeneratedKeys();
+		
+		if(id.next()) {
+			
+			disc.setCodDisciplina(id.getInt(1));
+		}else {
+			System.out.println("erro ao criar disciplina");
+		}
 		query.close();
 	}
 

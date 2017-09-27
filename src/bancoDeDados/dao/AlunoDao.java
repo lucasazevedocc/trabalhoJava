@@ -5,6 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import com.mysql.jdbc.Statement;
+
 import trabalhojavanp1.objetos.Aluno;
 
 public class AlunoDao {
@@ -13,15 +15,23 @@ public class AlunoDao {
 	public void inserirAluno(Aluno aluno) throws SQLException {
 
 		PreparedStatement query = new ConnectionFactory().getConnection()
-				.prepareStatement("INSERT INTO alunos(nome, endereco) VALUES(?, ?)");
+				.prepareStatement("INSERT INTO alunos(nome, endereco) VALUES(?, ?)",Statement.RETURN_GENERATED_KEYS);
 		query.setString(1, aluno.getNome());
 		query.setString(2, aluno.getEndereco());
 		
-		if(query.execute()) {
-			System.out.println("erro ao inserir aluno");
+		query.executeUpdate();
+		ResultSet id = query.getGeneratedKeys();
+		
+		if(id.next()) {
+			
+			aluno.setMatricula(id.getInt(1));
+			System.out.println("aluno inserido com sucesso com id " + aluno.getMatricula());
+			
 		}else {
-			System.out.println("aluno criado com sucesso");
+			
+			System.out.println("erro ao inserir usuario");
 		}
+		
 		query.close();
 	}
 

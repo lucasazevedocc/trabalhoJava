@@ -1,12 +1,12 @@
 package dao;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import trabalhojavanp1.objetos.Curso;
+import com.mysql.jdbc.Statement;
+
 import trabalhojavanp1.objetos.Professor;
 
 public class ProfessorDao {
@@ -14,13 +14,21 @@ public class ProfessorDao {
 	public void inserirProfessor(Professor prof) throws SQLException {
 
 		PreparedStatement query = new ConnectionFactory().getConnection()
-				.prepareStatement("INSERT INTO professores(id, nome, formacao) VALUES(?, ?, ?)");
+				.prepareStatement("INSERT INTO professores(id, nome, formacao) VALUES(?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
 
 		query.setInt(1, prof.getRegistro());
 		query.setString(2, prof.getNome());
 		query.setString(3, prof.getFormacao());
 
-		query.execute();
+		query.executeUpdate();
+		ResultSet id = query.getGeneratedKeys();
+		
+		if(id.next()) {
+			
+			prof.setRegistro(id.getInt(1));
+		}else {
+			System.out.println("erro ao criar professor");
+		}
 		query.close();
 	}
 

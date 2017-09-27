@@ -5,10 +5,10 @@
  */
 package trabalhojavanp1.objetos;
 
-import interfaces.PadraoDAO;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
+
+import interfaces.PadraoDAO;
 
 
 /**
