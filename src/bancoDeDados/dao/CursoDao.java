@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.mysql.jdbc.Statement;
-import com.sun.corba.se.spi.orbutil.fsm.State;
 
 import trabalhojavanp1.objetos.Curso;
 

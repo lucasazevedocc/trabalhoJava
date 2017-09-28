@@ -68,5 +68,28 @@ public class AlunoCursoDao {
 
 		return listaAlunos;
 	}
+	
+	public ArrayList<Curso> mostraCursos(Aluno aluno) throws SQLException {
+
+		ArrayList<Curso> listaCursos = new ArrayList<Curso>();
+
+		PreparedStatement query = new ConnectionFactory().getConnection()
+				.prepareStatement("SELECT id, nome FROM cursos JOIN aluno_curso ON cursos.id = aluno_curso.id_curso WHERE id_aluno = ?");
+		
+		query.setInt(1, aluno.getMatricula());
+
+		ResultSet resposta = query.executeQuery();
+
+		while (resposta.next()) {
+			Curso c = new Curso();
+			c.setCodCurso(resposta.getInt(1));
+			c.setNomeDoCurso(resposta.getString(2));
+			listaCursos.add(c);
+		}
+
+		query.close();
+
+		return listaCursos;
+	}
 
 }
