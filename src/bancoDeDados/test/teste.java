@@ -4,7 +4,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import dao.AlunoCursoDao;
-import dao.AlunoDao;
 import trabalhojavanp1.objetos.Aluno;
 import trabalhojavanp1.objetos.Curso;
 
