@@ -1,0 +1,124 @@
+
+
+import java.awt.Color;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
+public class menuprincipal extends JFrame {
+     
+ 
+ 
+public menuprincipal()
+{  
+    
+        
+       setTitle("Sistema de Gestão Escolar");
+       
+		setResizable(false);   // altera tamanho
+		setLocation(65,20);	
+                setSize(600,700);
+                //setBounds(100,100,400,300);
+		setBackground(Color.gray);
+                setExtendedState(JFrame.MAXIMIZED_BOTH);  
+                setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+
+        
+        
+      
+       teste t = new teste ();
+
+      getContentPane().setLayout(null);
+      getContentPane().add(t.Login);
+      getContentPane().add(t.CNome);
+      getContentPane().add(t.CSenha);
+      getContentPane().add(t.Nome);
+      getContentPane().add(t.Senha);
+
+      
+      
+                }
+        
+ 
+public static void main (String arg[])
+	{
+		new menuprincipal().setVisible(true);
+	}
+}
+
+
+import javax.swing.JPanel;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+
+public class teste extends JPanel implements ActionListener{
+    
+                    JTextField Nome;
+                    JLabel Login, CNome, CSenha;
+                    JPasswordField Senha;
+                    ImageIcon Imagem;
+
+                    int Vezes = 0;
+                    Color cor= new Color (255,45,78);
+   
+public teste ()
+{ 
+	
+      Login = new JLabel("Login");
+      Login.setLocation(80,20);	
+      Login.setSize(600,60);
+      Login.setFont(new Font("Serif", Font.BOLD, 36));
+      Login.setForeground (cor);
+     
+      CNome = new JLabel("Nome: ");
+      CNome.setLocation(40,300);
+      CNome.setSize(100,30);
+      CNome.setFont(new Font("Serif", Font.BOLD, 24));
+
+      Nome = new JTextField("");
+      Nome.setSize(280,30);
+      Nome.setLocation(160,300);
+      Nome.setFont(new Font("Serif", Font.BOLD, 24));
+
+      CSenha = new JLabel("Senha: ");
+      CSenha.setLocation(40,380);
+      CSenha.setSize(150,30);
+      CSenha.setFont(new Font("Serif", Font.BOLD, 24));
+		
+      JPasswordField Senha = new JPasswordField();
+      this.Senha = Senha ;
+      Senha.setEchoChar('*');
+      Senha.setSize(150,30);
+      Senha.setLocation(160,380);
+      Senha.addActionListener(this);
+      Senha.setFont(new Font("Serif", Font.BOLD, 24));
+
+      
+   }
+  
+
+   public void actionPerformed(ActionEvent e)
+   {
+      Vezes = Vezes + 1;
+
+      if((Nome.getText().equals("admin")) && (Senha.getText().equals("admin")))
+         JOptionPane.showMessageDialog(null,Nome.getText() + " ,VOCÊ ACERTOU A SENHA!");
+      else
+      {
+         if(Vezes == 3)
+         {
+            JOptionPane.showMessageDialog(null,"TENTE MAIS TARDE!");
+  	        System.exit(0);
+	     }
+         else
+	        JOptionPane.showMessageDialog(null,"SENHA ERRADA! TENTE NOVAMENTE!");
+      }
+   }
+}
+
+
+
