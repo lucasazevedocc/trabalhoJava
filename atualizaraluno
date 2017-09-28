@@ -1,0 +1,219 @@
+
+import javax.swing.JPanel;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class teste extends JPanel implements ActionListener
+    {
+    
+                JTextField Nome, Matricula,  End;
+                JLabel Titulo, CNome, CMatricula,  CEnd, CCurso, CErro;
+                JButton Enviar;
+                JList Cursos; 
+                DefaultListModel lista;
+                Color cor= new Color (255,45,78);
+   
+public teste ()
+{ 
+	
+      Titulo = new JLabel("Atualizar Aluno");
+      Titulo.setLocation(80,20);	
+      Titulo.setSize(600,60);
+      Titulo.setFont(new Font("Serif", Font.BOLD, 36));
+      Titulo.setForeground (cor);
+      
+      CMatricula = new JLabel("Código do Aluno: ");
+      CMatricula.setLocation(30,120);
+      CMatricula.setSize(200,30);
+      CMatricula.setFont(new Font("Serif", Font.BOLD, 14));
+
+      Matricula = new JTextField("");
+      Matricula.setSize(200,30);
+      Matricula.setLocation(160,120);
+      Matricula.setFont(new Font("Serif", Font.BOLD, 24));
+      
+      CNome = new JLabel("Nome: ");
+      CNome.setLocation(30,190);
+      CNome.setSize(200,30);
+      CNome.setFont(new Font("Serif", Font.BOLD, 14));
+
+      Nome = new JTextField("");
+      Nome.setSize(400,30);
+      Nome.setLocation(160,190);
+      Nome.setFont(new Font("Serif", Font.BOLD, 24));
+      
+      CEnd = new JLabel("Código Instituto: ");
+      CEnd.setLocation(30,260);
+      CEnd.setSize(200,30);
+      CEnd.setFont(new Font("Serif", Font.BOLD, 14));
+
+      End = new JTextField("");
+      End.setSize(400,30);
+      End.setLocation(160,260);
+      End.setFont(new Font("Serif", Font.BOLD, 24));
+
+      CCurso = new JLabel("Curso: ");
+      CCurso.setLocation(30,300);
+      CCurso.setSize(200,30);
+      CCurso.setFont(new Font("Serif", Font.BOLD, 14));
+
+      lista = new DefaultListModel();
+      lista.addElement("Administração de Empresas");
+      lista.addElement("Bio Medicina");
+      lista.addElement("Ciências Biológicas");
+      lista.addElement("Ciências da Computação");
+      lista.addElement("Direito");
+      lista.addElement("Ed. Física");
+      lista.addElement("Farmacologia");
+      lista.addElement("Redes de Computadores");
+      lista.addElement("Sistemas de Informações");
+      
+      Cursos = new JList(lista);
+      Cursos.setSize(150,180);
+      Cursos.setLocation(30,350);
+      Cursos.setBackground(new Color(208,255,255));
+      //Cursos.addListSelectionListener((ListSelectionListener) this);
+
+      Enviar = new JButton("Enviar");
+      Enviar.setSize(150,40);
+      Enviar.setLocation(300,480);
+      Enviar.setBackground(new Color(150,220,255));
+      Enviar.addActionListener(this);
+      Enviar.setFont(new Font("Times New Roman", Font.BOLD, 16));      
+      Enviar.setBackground(new Color(150,220,255));
+      
+      CErro = new JLabel(" ");//Parar erro
+      CErro.setLocation(30,260);
+      CErro.setSize(200,30);
+		
+}
+
+ public void actionPerformed(ActionEvent e)
+   {
+      
+	        JOptionPane.showMessageDialog(null, " Atualizado!");
+   }
+}
+
+
+		
+
+import java.awt.Color;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
+public class menuprincipal extends JFrame {
+     
+ 
+ 
+public menuprincipal()
+{  
+    
+        
+       setTitle("Sistema de Gestão Escolar");
+       
+		setResizable(false);   // altera tamanho
+		setLocation(65,20);	
+                setSize(600,600);
+                //setBounds(100,100,400,300);
+		setBackground(Color.gray);
+                setExtendedState(JFrame.MAXIMIZED_BOTH);  
+                setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+
+        
+        // Cria uma barra de menu para o JFrame
+        JMenuBar menuBar = new JMenuBar();
+        
+        // Adiciona a barra de menu ao  frame
+        setJMenuBar(menuBar);
+        
+        // Define e adiciona dois menus drop down na barra de menus
+        JMenu cadastroMenu = new JMenu("Cadastro");
+        JMenu mostrarMenu = new JMenu("Mostrar");
+        JMenu manutencaoMenu = new JMenu("Manutenção");
+        JMenu sairMenu = new JMenu("Sair");
+        menuBar.add(cadastroMenu);
+        menuBar.add(mostrarMenu);
+        menuBar.add(manutencaoMenu);
+        menuBar.add(sairMenu);
+        
+        // Cria e adiciona um item simples para o menu
+        JMenuItem aAction = new JMenuItem("Aluno");
+        JMenuItem pAction = new JMenuItem("Professor");
+        JMenuItem dAction = new JMenuItem("Disciplina");
+        JMenuItem cAction = new JMenuItem("Curso");
+        
+        JMenuItem maAction = new JMenuItem("Aluno");
+        JMenuItem mpAction = new JMenuItem("Professor");
+        JMenuItem mdAction = new JMenuItem("Disciplina");
+        JMenuItem mcAction = new JMenuItem("Curso");
+        JMenuItem mpcAction = new JMenuItem("Professor/Curso");
+        JMenuItem mpdAction = new JMenuItem("Professor/Disciplina");
+        JMenuItem mdcAction = new JMenuItem("Curso/Disciplina");
+        
+        JMenuItem iaAction = new JMenuItem("Incluir Aluno");
+        JMenuItem ipAction = new JMenuItem("Incluir Professor");
+        JMenuItem idAction = new JMenuItem("Incluir Disciplina");
+        JMenuItem icAction = new JMenuItem("Incluir Curso");
+        JMenuItem eaAction = new JMenuItem("Excluir Aluno");
+        JMenuItem epAction = new JMenuItem("Excluir Professor");
+        JMenuItem edAction = new JMenuItem("Excluir Disciplina");
+        JMenuItem ecAction = new JMenuItem("Excluir Curso");
+        
+        
+        cadastroMenu.add(aAction); //a- Aluno
+        cadastroMenu.add(pAction);
+        cadastroMenu.add(dAction);
+        cadastroMenu.add(cAction);
+        //cadastroMenu.addSeparator(); coloca linha divisora no meu
+        //cadastroMenu.add(exitAction);
+        
+        mostrarMenu.add(maAction);//ma- Mostrar aluno
+        mostrarMenu.add(mdAction);
+        mostrarMenu.add(mcAction);
+        mostrarMenu.add(mpAction);
+        mostrarMenu.add(mpcAction);
+        mostrarMenu.add(mpdAction);
+        mostrarMenu.add(mdcAction);
+      
+        manutencaoMenu.add(iaAction); //ia- incluir aluno
+        manutencaoMenu.add(ipAction);
+        manutencaoMenu.add(icAction);
+        manutencaoMenu.add(idAction);
+        manutencaoMenu.add(eaAction); //ea- Excluir aluno
+        manutencaoMenu.add(epAction);
+        manutencaoMenu.add(ecAction);
+        manutencaoMenu.add(edAction);
+      
+      
+       teste t = new teste ();
+
+      getContentPane().add(t.Titulo);
+      getContentPane().add(t.CNome);
+      getContentPane().add(t.CMatricula);
+      getContentPane().add(t.Nome);
+      getContentPane().add(t.Matricula);
+      
+      
+      getContentPane().add(t.CEnd);
+      getContentPane().add(t.CCurso);
+      getContentPane().add(t.Cursos);
+      getContentPane().add(t.End);
+      getContentPane().add(t.Enviar);
+      getContentPane().add(t.CErro);
+      
+      
+                }
+        
+ 
+public static void main (String arg[])
+	{
+		new menuprincipal().setVisible(true);
+	}
+}
+
