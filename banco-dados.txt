@@ -29,7 +29,7 @@ create table disciplinas(
 	nome char(40) not null
 );
 
-create table curso_disciplina(
+create table curso_disciplina_professor(
 	id_curso int ,
 	id_disciplina int ,
 	id_professor int 
@@ -41,7 +41,7 @@ create table professores(
 	formacao char(60) not null
 );
 
-create table disciplina_profesor(
+create table disciplina_professor(
 	id_disciplina int, 
 	id_professor int
 );
